@@ -4,6 +4,13 @@
 @section('content')
     <section id="feature" class="feature pt-50 pb-50">
         <div class="container-fluid">
+
+
+
+            <a href="{{ route('pdo') }}" class="btn btn-sm my-2" style="background-color: #5E63B6;">
+                <i class="fas fa-sm fa-arrow-lef"></i> Kembali
+            </a>
+
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="#">Pages</a></li>
