@@ -424,7 +424,7 @@
                         <button type="button" class="btn btn-sm text-white" data-bs-dismiss="modal"
                             style="background-color: red"><i class="fas fa-sm fa-times mx-1"></i>Close</button>
                         <button type="button" class="btn btn-sm text-white" data-bs-dismiss="modal"
-                            style="background-color: #5E63B6"><i class="fas fa-sm fa-download mx-1"></i>Download</button>
+                            style="background-color: #5E63B6"><i class="fas fa-sm fa-download mx-1"></i>Save</button>
                     </div>
                 </div>
             </div>
@@ -445,7 +445,7 @@
         }
 
         textarea.chat-input {
-            font-size: 16px;
+            font-size: 12px;
             /* Ukuran font minimal 16px */
             resize: none;
             height: auto;
