@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PdoController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -18,6 +19,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('home');
 });
+
+Route::prefix('internal')->group(function () {
+    Route::get('/', [DashboardController::class, 'index'])
+        ->name('dashboard');
+});
+
 
 Route::get('pdo', [PdoController::class, 'index'])
     ->name('pdo');

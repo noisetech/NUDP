@@ -7,8 +7,8 @@
 
 
 
-            <a href="{{ route('pdo') }}" class="btn btn-sm my-2" style="background-color: #5E63B6;">
-                <i class="fas fa-sm fa-arrow-lef"></i> Kembali
+            <a href="{{ route('pdo') }}" class="btn btn-sm text-white my-2" style="background-color: #5E63B6;">
+                <i class="fas fa-sm fa-arrow-left mx-1"></i> Kembali
             </a>
 
             <nav aria-label="breadcrumb">
@@ -589,3 +589,5 @@
         });
     </script>
 @endpush
+k
+ 
