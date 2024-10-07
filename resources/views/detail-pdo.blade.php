@@ -185,7 +185,7 @@
 
 
                                 <div class="d-flex justify-content-center my-4">
-                                    <a class="btn text-white text-sm " href="#" role="button"
+                                    <a class="btn text-white text-sm " href="#" role="button" id="pop-up-generate-ai"
                                         style="background-color: #5E63B6 !important;">Generate Document</a>
                                 </div>
                             </div>
@@ -194,7 +194,7 @@
                 </div>
 
 
-                <div class="row mt-4">
+                <div class="row mt-4" style="margin-bottom: 120px;` !important;">
                     <div class="col-md-12">
                         <div class="card shadow">
                             <div class="card-body">
@@ -353,29 +353,47 @@
                 </div>
 
 
-                <div class="row justify-content-center mt-4">
+                <div class="row justify-content-center mt-5 mb-3 sticky-footer">
                     <div class="col-md-8">
                         <div class="card shadow">
                             <div class="card-body">
                                 <p style="font-size: 12px;">
+                                    <img src="{{ asset('fe/assets/img/bot1.png') }}" alt=""
+                                        class="img-fluid mx-2 mb-2" width="60">
 
-                                    <img src="{{ asset('fe/assets/img/bot1.png') }}" alt="" class="img-fluid mx-2"
-                                        width="60">
 
-
-                                    Tanya AI e.g. “Apa itu NUDP dan apa saja komponen nya? Bagaimana kinerja pada bulan
-                                    Januari 2024?”
+                                    <textarea placeholder="Masukan pertanyaan kepada AI" name="pertanyaan_to_ai" id="chatInput"
+                                        class="form-control chat-input" rows="1"></textarea>
                                 </p>
-
-
-                                <a href="" class="btn btn-sm mx-1" style="font-size: 12px">
+                                <a href="#" id="generate-ai" class="btn btn-sm mx-1" style="font-size: 12px">
                                     <img src="{{ asset('fe/assets/img/upload.png') }}" alt="" class="img-fluid"
                                         width="40"> Generate AI
                                 </a>
-
-
                             </div>
                         </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+        <div class="modal fade" id="modalGenerateAI" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Hasil Generate AI</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <span>Silahkan tekan tombol close untuk download hasil generate AI</span>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-sm text-white" data-bs-dismiss="modal"
+                            style="background-color: red"><i class="fas fa-sm fa-times mx-1"></i>Close</button>
+                        <button type="button" class="btn btn-sm text-white" data-bs-dismiss="modal"
+                            style="background-color: #5E63B6"><i class="fas fa-sm fa-download mx-1"></i>Download</button>
                     </div>
                 </div>
             </div>
@@ -383,14 +401,71 @@
     </section>
 @endsection
 
+@push('style')
+    <style>
+        .sticky-footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            display: flex;
+            margin: 0;
+        }
+
+        textarea.chat-input {
+            resize: none;
+            /* Menghilangkan opsi resize manual */
+            height: auto;
+            /* Tinggi dinamis */
+            min-height: 40px;
+            /* Tinggi minimum untuk tampil seperti input chat */
+            max-height: 120px;
+            /* Tinggi maksimum sebelum scroll muncul */
+            overflow-y: auto;
+            /* Scroll vertikal jika melebihi tinggi maksimum */
+            font-size: 14px;
+            /* Ukuran font yang lebih kecil */
+            padding: 10px;
+            /* Padding untuk ruang di dalam textarea */
+            border-radius: 15px;
+            /* Bentuk bulat seperti input chat */
+        }
+
+
+        footer {
+            padding-top: 20px;
+
+
+            padding-bottom: 80px;
+        }
+    </style>
+@endpush
+
 @push('script')
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <script>
+        window.addEventListener('scroll', function() {
+            var footer = document.querySelector('footer');
+            var sticky = document.querySelector('.sticky-footer');
+            var footerRect = footer.getBoundingClientRect();
+            var stickyRect = sticky.getBoundingClientRect();
+
+            if (footerRect.top <= window.innerHeight) {
+
+                sticky.style.bottom = (window.innerHeight - footerRect.top) + 'px';
+            } else {
+                sticky.style.bottom = '0';
+            }
+        });
+    </script>
+
+    <script>
         const ctx = document.getElementById('progressChart').getContext('2d');
 
-        // Total progress and remaining
-        const progress = 75; // Replace this with your actual progress percentage
+
+        const progress = 75;
         const remaining = 100 - progress;
 
         const progressChart = new Chart(ctx, {
@@ -400,7 +475,7 @@
                 datasets: [{
                     label: 'Progress',
                     data: [progress, remaining],
-                    backgroundColor: ['#7E60BF', '#E4B1F0'], // Colors for progress and remaining
+                    backgroundColor: ['#7E60BF', '#E4B1F0'],
                     borderColor: ['#ffffff', '#ffffff'],
                     borderWidth: 1
                 }]
@@ -471,6 +546,12 @@
                     }
                 }
             }
+        });
+
+
+
+        $(document).on('click', '#generate-ai', function() {
+            $('#modalGenerateAI').modal('show');
         });
     </script>
 @endpush
