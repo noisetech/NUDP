@@ -445,24 +445,16 @@
         }
 
         textarea.chat-input {
+            font-size: 16px;
+            /* Ukuran font minimal 16px */
             resize: none;
-            /* Menghilangkan opsi resize manual */
             height: auto;
-            /* Tinggi dinamis */
             min-height: 40px;
-            /* Tinggi minimum untuk tampil seperti input chat */
             max-height: 120px;
-            /* Tinggi maksimum sebelum scroll muncul */
             overflow-y: auto;
-            /* Scroll vertikal jika melebihi tinggi maksimum */
-            font-size: 14px;
-            /* Ukuran font yang lebih kecil */
             padding: 10px;
-            /* Padding untuk ruang di dalam textarea */
             border-radius: 15px;
-            /* Bentuk bulat seperti input chat */
         }
-
 
         footer {
             padding-top: 20px;
