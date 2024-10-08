@@ -7,6 +7,8 @@
 
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap4.min.css">
+
+{{-- <link rel="stylesheet" href="https://unpkg.com/dropzone@5/dist/min/dropzone.min.css" type="text/css" /> --}}
 <script src="{{ asset('../../be/assets/kit.fontawesome.com/42d5adcbca.js') }}" crossorigin="anonymous"></script>
 <link href="{{ asset('../../be/assets/css/nucleo-svg.css') }}" rel="stylesheet" />
 

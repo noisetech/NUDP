@@ -40,7 +40,7 @@
                     </span>
 
 
-                    <a href="javascript:void(0)" class="btn btn-xs text-white" style="background-color: #5e63b6 !important;" id="btnTambah">
+                    <a href="{{ route('manajemen-dokumen-bapernas.create') }}" class="btn btn-xs text-white" style="background-color: #5e63b6 !important;">
                         <i class="fas fa-sm fa-plus text-white text-xs opacity-10 px-1"></i> Add Document Reference
                     </a>
                 </div>

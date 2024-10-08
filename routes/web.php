@@ -81,6 +81,8 @@ Route::prefix('internal')->group(function () {
     // manajemen dokumen
     Route::get('manajemen-dokumen-bapernas', [ManajemenDokumenBapernasController::class, 'index'])
         ->name('manajemen-dokumen-bapernas');
+    Route::get('manajemen-dokumen-bapernas/create', [ManajemenDokumenBapernasController::class, 'create'])
+        ->name('manajemen-dokumen-bapernas.create');
 });
 
 

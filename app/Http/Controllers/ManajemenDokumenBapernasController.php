@@ -11,10 +11,13 @@ class ManajemenDokumenBapernasController extends Controller
         return view('pages.manajemen-dokumen.index');
     }
 
-    public function data(Request $request) {
+    public function data(Request $request) {}
 
+
+    public function create()
+    {
+        return view('pages.manajemen-dokumen.tambah');
     }
-
 
     public function simpan(Request $request) {}
 }
