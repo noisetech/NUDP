@@ -36,7 +36,7 @@
                 <div class="collapse" id="manajemenDokumen">
                     <ul class="nav ms-4">
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="{{ route('manajemen-dokumen-bapernas') }}" class="nav-link">
                                 <div
                                     class="icon icon-shape icon-sm text-center d-flex align-items-center justify-content-center">
                                     <i class="fa fa-home text-primary text-sm opacity-10"></i>
@@ -182,7 +182,7 @@
                 <div class="collapse" id="manajemenProgresNudp">
                     <ul class="nav ms-4">
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="{{ route('permissions') }}" class="nav-link">
                                 <div
                                     class="icon icon-shape icon-sm text-center d-flex align-items-center justify-content-center">
                                     <i class="fa fa-cog text-primary text-sm opacity-10"></i>
@@ -193,7 +193,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="{{ route('role') }}" class="nav-link">
                                 <div
                                     class="icon icon-shape icon-sm text-center d-flex align-items-center justify-content-center">
                                     <i class="fa fa-user text-primary text-sm opacity-10"></i>
@@ -204,7 +204,7 @@
 
 
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="{{ route('users') }}" class="nav-link">
                                 <div
                                     class="icon icon-shape icon-sm text-center d-flex align-items-center justify-content-center">
                                     <i class="fa fa-users text-primary text-sm opacity-10"></i>
